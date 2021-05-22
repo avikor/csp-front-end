@@ -1,0 +1,32 @@
+<form [formGroup]="magicSquareForm" (ngSubmit)="onSubmit()">
+
+  <mat-label>
+    Find all Magic Squares of size: 
+    <input type="number" min="9" max="15" formControlName="magicSquareSize" required>
+  </mat-label>
+
+  <br>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Algorithm</mat-label>
+    <mat-select [formControl]="algoControl">
+      <mat-option *ngFor="let algo of algorithms" [value]="algo.value">
+        {{algo.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <button type="submit" class="submit-button" [disabled]="!magicSquareForm.valid">Submit</button>
+  
+</form>
+
+<br>
+
+<ng-container *ngFor="let msquare of magicSquares; index as i">
+  <p>{{i + 1 }}.</p>
+  <mat-grid-list  cols="{{sqrtMagicSquareSize}}" rowHeight="4rem">
+    <mat-grid-tile *ngFor="let num of msquare">{{num}}</mat-grid-tile>
+  </mat-grid-list>
+</ng-container>

@@ -1,0 +1,38 @@
+<p>
+  A <i>Constraint Satisfaction Problem (CSP)</i> is a triplet <i>(X, D, C)</i> where <i>X</i> is a set of variables X<sub>1</sub>, ...,X<sub>n</sub>.
+  <br>  
+  <i>D</i> is a set of domains D<sub>1</sub>, ...,D<sub>n</sub>, where each variable X<sub>i</sub> is assigned with values from domain D<sub>i</sub>.
+  <br>  
+  And <i>C</i> is a set of constraints C<sub>1</sub>(S<sub>1</sub>), ..., C<sub>m</sub>(S<sub>m</sub>), 
+  <br>
+  where each S<sub>i</sub> is a set of variables on which C<sub>i</sub> defines a constraint.
+  <br>  
+  A state of <i>Constraint Satisfaction Problem</i> instance is defined by an <b>assignment</b> of values to some or all of its variables.
+  <br>   
+  A <b>complete assignment</b> is a state in which every variable is assigned with a value from its domain.
+  <br>  
+  A <b>partial assignment</b> is a state in which some variables are assigned and some are not.
+  <br>  
+  A <b>consistent assignment</b> is a state in which the assigned variables do not violate any constraints.  
+  <br>
+  A <b>complete consistent assignment</b> is a solution to a _Constraint Satisfaction Problem_ instance.  
+  <br>
+  A <b>constraint graph</b> (could be a hypergraph) is a graph in which the nodes correspond to varaibles  
+  <br>
+  and the edges correspond to constraints, i.e. V = X and E = C.
+
+  <br>
+  <br>
+
+  This website allows users to find solutions to the Pythagorean Triples proble, Magic Square Problem, and N Queens Problem.
+  <br>
+  They are represented as constraint satisfaction problems and are solved at server side.
+  <br>
+  All problems are currently solved using a Heuristic Backtracking Solver which uses the 
+  <br>
+  Minimum Remaining Values, Degree, and Least Constraining Value heuristics.
+  <br>
+  Meaning choosing different algorithms through the dropdown currently has no effect.
+  <br>
+  Further problems and solvers might be added later on.
+</p>

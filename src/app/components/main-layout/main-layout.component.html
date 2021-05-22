@@ -1,0 +1,32 @@
+<h1>Constraint Satisfaction Problems</h1>
+
+<nav>
+  <button mat-raised-button class="nav-button" (click)="toggleProblem('Home')">Home</button>
+  <button mat-raised-button class="nav-button" (click)="toggleProblem('PythagoreanTriples')">Pythagorean Triples</button>
+  <button mat-raised-button class="nav-button" (click)="toggleProblem('MagicSquare')">Magic Square</button>
+  <button mat-raised-button class="nav-button" (click)="toggleProblem('NQueens')">N Queens</button>
+</nav>
+
+<br>
+
+<app-home
+  *ngIf="showHome">
+</app-home>
+
+<app-pythagorean-triples 
+  *ngIf="showPythagoreanTriples" 
+  [pythTableDataSource]="pythSolutions$ | async" 
+  (pythTripleEvent)="onPythTripleEvent($event)">
+</app-pythagorean-triples>
+
+<app-magic-square 
+  *ngIf="showMagicSquare"
+  [magicSquares]="magicSquareSolutions$ | async"
+  (magicSquareEvent)="onMagicSquareEvent($event)">
+</app-magic-square>
+
+<app-n-queens 
+  *ngIf="showNQueense"
+  [queenPositions]="nQueensSolutions$ | async"
+  (nQueensEvent)="onNQueensEvent($event)">
+</app-n-queens>

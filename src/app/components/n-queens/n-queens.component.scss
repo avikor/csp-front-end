@@ -1,0 +1,23 @@
+.submit-button {
+    margin-left: 0.5%;
+ }
+
+ .chessboard {
+    width: 25rem;
+    height: 25rem;
+    margin-bottom: 1rem;
+    border: 0.25rem double black;
+}
+
+.cell {
+    float: left;
+    width: 3.125rem;
+    height: 3.125rem;
+    font-size: 2.188rem;
+    text-align: center;
+    vertical-align: text-bottom;
+}
+
+.black {
+    background-color: #999;
+}

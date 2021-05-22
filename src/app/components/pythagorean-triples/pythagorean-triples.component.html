@@ -1,0 +1,35 @@
+<form [formGroup]="pythForm" (ngSubmit)="onSubmit()">
+
+  <mat-label>
+    Find all Pythagorean Triples up to:
+    <input type="number" min="5" formControlName="upperBound" required>
+  </mat-label>
+
+  <br>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Algorithm</mat-label>
+    <mat-select [formControl]="algoControl">
+      <mat-option *ngFor="let algo of algorithms" [value]="algo.value">
+        {{algo.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+<button type="submit" class="submit-button" [disabled]="!pythForm.valid">Submit</button>
+
+</form>
+
+<table mat-table *ngIf="pythTableDataSource" [dataSource]="pythTableDataSource" class="mat-elevation-z8">
+
+  <ng-container [matColumnDef]="column" *ngFor="let column of ptyhDisplayedColumns">
+    <th class="w-5rem" mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="ptyhDisplayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: ptyhDisplayedColumns;"></tr>
+
+</table>

@@ -1,0 +1,48 @@
+<form [formGroup]="nQueensForm" (ngSubmit)="onSubmit()">
+
+  <mat-label>
+    Find all n Queens solutions for chess board of size: 
+    <input type="number" min="4" max="10" formControlName="nQueensSize" required>
+  </mat-label>
+
+  <br>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Algorithm</mat-label>
+    <mat-select [formControl]="algoControl">
+      <mat-option *ngFor="let algo of algorithms" [value]="algo.value">
+        {{algo.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <button type="submit" class="submit-button" [disabled]="!nQueensForm.valid">Submit</button>
+
+</form>
+
+
+<br>
+
+<ng-container *ngFor="let queenPlaces of queenPositions; index as i">
+  <p>{{i + 1 }}.</p>
+  <div class="chessboard" 
+  [style.width.rem]="boardDimension"
+  [style.height.rem]="boardDimension">
+    <ng-container *ngFor="let row of NumSeq(nQueensSize); even as evenRow">
+
+      <ng-container *ngFor="let col of NumSeq(nQueensSize); even as evenCol">
+  
+        <div *ngIf="evenRow === evenCol; else white" class="cell black" 
+        [innerHTML]="hasQueen((queenPlaces.includes(col) && queenPlaces[col] === row))"></div>
+  
+        <ng-template #white>
+          <div class="cell" [innerHTML]="hasQueen((queenPlaces.includes(col) && queenPlaces[col] === row))"></div>
+        </ng-template>
+  
+      </ng-container>
+      
+    </ng-container>
+  </div>
+</ng-container>
