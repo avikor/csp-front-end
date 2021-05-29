@@ -28,10 +28,10 @@ export class NQueensComponent implements OnInit {
   public algorithms: IAlgorithm[] = CSP_ALGORITHMS;
 
   get algoControl(): any {
-    return this.nQueensForm.controls['algorithm'];
+    return this.nQueensForm.controls["algorithm"];
   }
 
-  hasQueen(val: boolean) {
+  hasQueen(val: boolean): string {
     return val ? NQueensComponent.BLACK_CHESS_QUEEN_HTML_CODE: "";
   }
 

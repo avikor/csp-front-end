@@ -1,3 +1,9 @@
+<div>
+  Find all triples (x, y, z) such that x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup> and x < y < z and max{{"{x, y, z}"}} &lt; n.
+</div>
+
+<br>
+
 <form [formGroup]="pythForm" (ngSubmit)="onSubmit()">
 
   <mat-label>
@@ -21,6 +27,8 @@
 <button type="submit" class="submit-button" [disabled]="!pythForm.valid">Submit</button>
 
 </form>
+
+<br>
 
 <table mat-table *ngIf="pythTableDataSource" [dataSource]="pythTableDataSource" class="mat-elevation-z8">
 

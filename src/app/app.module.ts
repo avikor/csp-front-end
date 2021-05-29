@@ -20,16 +20,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
-import { PythagoreanTriplesComponent } from './components/pythagorean-triples/pythagorean-triples.component';
-import { MagicSquareComponent } from './components/magic-square/magic-square.component';
-import { NQueensComponent } from './components/n-queens/n-queens.component';
-import { HomeComponent } from './components/home/home.component';
+import { PythagoreanTriplesComponent } from './components/tabs/pythagorean-triples/pythagorean-triples.component';
+import { MagicSquareComponent } from './components/tabs/magic-square/magic-square.component';
+import { NQueensComponent } from './components/tabs/n-queens/n-queens.component';
+import { HomeTabComponent } from './components/tabs/home-tab/home-tab.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeTabComponent,
     MainLayoutComponent,
     PythagoreanTriplesComponent,
     MagicSquareComponent,

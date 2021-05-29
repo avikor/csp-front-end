@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CSProblemString } from 'src/app/shared/CSProblem';
+import { TabType } from 'src/app/shared/tabs';
 import { IMagicSquareEvent } from 'src/app/shared/models/magicSquare.models';
 import { INQueensEvent } from 'src/app/shared/models/nQueens.models';
 import { IPythagoreanTriple, IPythagoreanTripleEvent } from 'src/app/shared/models/pythagoreanTriple.models';
@@ -17,7 +17,7 @@ export class MainLayoutComponent implements OnInit {
   public nQueensSolutions$: Observable<number[][]> = new Observable<number[][]>();
 
 
-  public problem: CSProblemString = "Home";
+  public tab: TabType = "Home";
 
   constructor(private solService: SolutionsService) { }
 
@@ -25,23 +25,23 @@ export class MainLayoutComponent implements OnInit {
   }
 
   public get showHome(): boolean {
-    return this.problem === "Home";
+    return this.tab === "Home";
   }
 
   public get showPythagoreanTriples(): boolean {
-    return this.problem === "PythagoreanTriples";
+    return this.tab === "PythagoreanTriples";
   }
 
   public get showMagicSquare(): boolean {
-    return this.problem === "MagicSquare";
+    return this.tab === "MagicSquare";
   }
 
   public get showNQueense(): boolean {
-    return this.problem === "NQueens";
+    return this.tab === "NQueens";
   }
 
-  public toggleProblem(type: CSProblemString): void {
-    this.problem = type; 
+  public toggleTab(type: TabType): void {
+    this.tab = type; 
   }
 
   public onPythTripleEvent(pythTripleEvent: IPythagoreanTripleEvent): void {

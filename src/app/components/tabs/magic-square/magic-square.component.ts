@@ -24,7 +24,7 @@ export class MagicSquareComponent implements OnInit {
   public algorithms: IAlgorithm[] = CSP_ALGORITHMS;
 
   get algoControl(): any {
-    return this.magicSquareForm.controls['algorithm'];
+    return this.magicSquareForm.controls["algorithm"];
   }
 
   constructor(private fb: FormBuilder) { }
@@ -35,8 +35,7 @@ export class MagicSquareComponent implements OnInit {
   public onSubmit(): void {
     const magicSquareSize: number = this.magicSquareForm.value["magicSquareSize"] as number;
     this.sqrtMagicSquareSize = Math.sqrt(magicSquareSize);
-    const magicSquareEvent: IMagicSquareEvent = this.magicSquareForm.value as IMagicSquareEvent;
-    this.magicSquareEvent.emit(magicSquareEvent);
+    this.magicSquareEvent.emit({ magicSquareSize: this.sqrtMagicSquareSize, algorithm: this.magicSquareForm.value["algorithm"] });
   }
 
 }

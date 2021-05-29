@@ -23,7 +23,7 @@ export class PythagoreanTriplesComponent implements OnInit {
   public ptyhDisplayedColumns: string[] = ["id", "x", "y", "z"];
 
   get algoControl(): any {
-    return this.pythForm.controls['algorithm'];
+    return this.pythForm.controls["algorithm"];
   }
 
   constructor(private fb: FormBuilder) { }
